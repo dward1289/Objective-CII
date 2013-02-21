@@ -49,15 +49,16 @@
 -(IBAction)onDateChange:(id)sender
 {
 
-    if (delegate)
+    if (delegate != nil)
     {
         
-        date = pickerVw.date;
+        dateP = pickerVw.date;
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat: @"MMMM dd, yyyy"];
         txtString =  txtField.text;
-        dateString = [dateFormatter stringFromDate: date];
+        dateString = [dateFormatter stringFromDate: dateP];
         [delegate DidClose:[NSString stringWithFormat:@"Event: %@ \nDate: %@",txtField.text, dateString]];
+        
     }
 
     [self dismissViewControllerAnimated:true completion:nil];

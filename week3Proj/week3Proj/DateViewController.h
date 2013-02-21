@@ -23,7 +23,7 @@
     IBOutlet UIDatePicker *pickerVw;
     NSString *txtString;
     NSString *dateString;
-    NSDate *date;
+    NSDate *dateP;
     id<DateViewDelegate> delegate;
 }
 
