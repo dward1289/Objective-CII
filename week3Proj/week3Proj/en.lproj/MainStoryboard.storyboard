@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date Planner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3S-9B-Er1">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="pYN-ZW-qin"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79y-Cs-0t9">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="DW7-zP-ClB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahl-Sn-I03">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Add Event">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onNewView:" destination="2" eventType="touchUpInside" id="4Jr-Qw-WAu"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="All events go here..." translatesAutoresizingMaskIntoConstraints="NO" id="7LP-wc-1d6">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="328" id="Lqt-sl-eJC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3" id="pXf-16-1sh"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ahl-Sn-I03" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="2Gd-Oc-rYZ"/>
+                            <constraint firstAttribute="bottom" secondItem="ahl-Sn-I03" secondAttribute="bottom" constant="23" id="2If-33-IEy"/>
+                            <constraint firstItem="7LP-wc-1d6" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="E0i-pp-TCA"/>
+                            <constraint firstItem="l3S-9B-Er1" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="GzJ-Qq-0nx"/>
+                            <constraint firstItem="79y-Cs-0t9" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="HPx-gs-1H6"/>
+                            <constraint firstItem="l3S-9B-Er1" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="L5y-kV-N24"/>
+                            <constraint firstItem="ahl-Sn-I03" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="O5W-bL-xTN"/>
+                            <constraint firstItem="7LP-wc-1d6" firstAttribute="top" secondItem="3" secondAttribute="top" constant="44" id="dAb-QY-eDC"/>
+                            <constraint firstItem="79y-Cs-0t9" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="g9U-78-8va"/>
+                            <constraint firstItem="l3S-9B-Er1" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="gWc-7r-Prl"/>
+                            <constraint firstItem="7LP-wc-1d6" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="wWs-Gc-w8c"/>
+                            <constraint firstItem="79y-Cs-0t9" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="wqV-hz-uRx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addBtn" destination="ahl-Sn-I03" id="OPz-Sf-qzX"/>
+                        <outlet property="txtView" destination="7LP-wc-1d6" id="uBn-G3-lGi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="onNewView:"/>
+                <relationship kind="outlet" name="addBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="txtView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
