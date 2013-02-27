@@ -20,6 +20,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    //Loads saved event
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if (defaults != nil)
@@ -30,6 +32,7 @@
     }
 }
 
+//Swipe right gesture to add event
 -(void)viewWillAppear:(BOOL)animated
 {
     rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onRight:)];
@@ -38,6 +41,7 @@
     
     [super viewWillAppear:animated];
 }
+
 
 -(void)onRight:(UISwipeGestureRecognizer*)recognizer
 {
@@ -59,6 +63,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+//Save text in text view
 -(IBAction)onSave:(id)sender
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -73,6 +78,7 @@
     }
 }
 
+//Add event and date to first view after add event screen closes
 -(void)DidClose:(NSString*)nameString
 {
     txtView.text = nameString;

@@ -34,6 +34,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    //Swipe left gesture to return to first view
     swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onLeft:)];
     swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
     [closer addGestureRecognizer:swipeLeft];
@@ -41,10 +42,12 @@
     [super viewWillAppear:animated];
 }
 
+//Swipe left gesture function
 -(void)onLeft:(UISwipeGestureRecognizer*)recognizer
 {
     if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft)
     {
+        //Gets event and date and sends it to the text view on the first view.
         if (delegate != nil)
         {
             NSDate *dateSelected = theDate.date;
@@ -68,6 +71,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+//Close keyboard
 -(IBAction)onKeyboard:(id)sender
 {
     [txtField resignFirstResponder];
